@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Icons/text.png" type="image/x-icon" />
+    <title>Text Styling Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <nav class="navigation-bar">
+            <div class="nav-content">
+                <a href="../index.html" class="home-link">
+                    <i class="bi bi-house"></i> Home
+                </a>
+                <h1 class="nav-title"><i class="bi bi-body-text"></i> Text Styling </h1>
+            </div>
+        </nav>
+
+        <div class="content-container">
+            <div class="preview-block">
+                <h3>Text Preview</h3>
+                <div class="preview-text" id="preview-text">
+                    This is a sample text that will show styling changes. Edit the text using controls to see different styles applied.
+                </div>
+            </div>
+
+            <div class="code-section">
+                <label class="code-label" for="generated-code">Generated Code:</label>
+                <textarea id="generated-code" readonly></textarea>
+            </div>
+        </div>
+
+        <div class="controls-container">
+            <!-- Row 1 -->
+            <div class="control-row">
+                <div class="control-group">
+                    <label for="text-input">Enter Text:</label>
+                    <textarea id="text-input" placeholder="Type your text here..."></textarea>
+                </div>
+                <div class="control-group"></div>
+                <div class="control-group"></div>
+                <div class="control-group">
+                    <label for="font-family">Font Family:</label>
+                    <select id="font-family">
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Gill Sans Extrabold">Gill Sans Extrabold</option>
+                        <option value="Goudy Bookletter 1911">Goudy Bookletter 1911</option>
+                        <option value="serif">Serif</option>
+                        <option value="sans-serif">Sans-serif</option>
+                        <option value="monospace">Monospace</option>
+                        <option value="cursive">Cursive</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="system-ui">System UI</option>
+                        <option value="ui-serif">UI Serif</option>
+                        <option value="ui-sans-serif">UI Sans-serif</option>
+                        <option value="ui-monospace">UI Monospace</option>
+                        <option value="ui-rounded">UI Rounded</option>
+                        <option value="emoji">Emoji</option>
+                        <option value="math">Math</option>
+                        <option value="fangsong">Fangsong</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-row">
+                <div class="control-group">
+                    <label for="font-size">Font Size:</label>
+                    <div class="range-container">
+                        <input type="range" id="font-size" min="8" max="72" value="16">
+                        <span id="font-size-value">16px</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="font-weight">Font Weight:</label>
+                    <select id="font-weight">
+                        <option value="normal">Normal</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                        <option value="400">400</option>
+                        <option value="500">500</option>
+                        <option value="600">600</option>
+                        <option value="700">700</option>
+                        <option value="800">800</option>
+                        <option value="900">900</option>
+                        <option value="bold">Bold</option>
+                        <option value="lighter">Lighter</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="font-style">Font Style:</label>
+                    <select id="font-style">
+                        <option value="normal">Normal</option>
+                        <option value="italic">Italic</option>
+                        <option value="oblique">Oblique</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="font-variant">Font Varient:</label>
+                    <select id="font-variant">
+                        <option value="normal">Normal</option>
+                        <option value="small-caps">Small Caps</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="control-row">
+                <div class="control-group">
+                    <label for="line-height">Line Height:</label>
+                    <div class="range-container">
+                        <input type="range" id="line-height" min="0.5" max="3" step="0.1" value="1.6">
+                        <span id="line-height-value">1.6</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="text-color">Text Color:</label>
+                    <input type="color" id="text-color" value="#333333">
+                </div>
+                <div class="control-group">
+                    <label for="text-align">Text Align:</label>
+                    <select id="text-align">
+                        <option value="left">Left</option>
+                        <option value="center">Center</option>
+                        <option value="right">Right</option>
+                        <option value="justify">Justify</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="text-decoration">Text Decoration:</label>
+                    <select id="text-decoration">
+                        <option value="none">None</option>
+                        <option value="underline">Underline</option>
+                        <option value="overline">Overline</option>
+                        <option value="line-through">Line Through</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="control-row">
+                <div class="control-group">
+                    <label for="letter-spacing">Letter Spacing (px):</label>
+                    <div class="range-container">
+                        <input type="range" id="letter-spacing" min="-10" max="20" value="0">
+                        <span id="letter-spacing-value">0px</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="word-spacing">Word Spacing (px):</label>
+                    <div class="range-container">
+                        <input type="range" id="word-spacing" min="-10" max="50" value="0">
+                        <span id="word-spacing-value">0px</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="text-indent">Text Indent (px):</label>
+                    <div class="range-container">
+                        <input type="range" id="text-indent" min="0" max="100" value="0">
+                        <span id="text-indent-value">0px</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="text-transform">Text Transform:</label>
+                    <select id="text-transform">
+                        <option value="none">None</option>
+                        <option value="uppercase">Uppercase</option>
+                        <option value="lowercase">Lowercase</option>
+                        <option value="capitalize">Capitalize</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="control-row">
+                <div class="control-group">
+                    <label for="shadow-x">Text Shadow X (px):</label>
+                    <div class="range-container">
+                        <input type="range" id="shadow-x" min="-10" max="10" value="0">
+                        <span id="shadow-x-value">0px</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="shadow-y">Text Shadow Y (px):</label>
+                    <div class="range-container">
+                        <input type="range" id="shadow-y" min="-10" max="10" value="0">
+                        <span id="shadow-y-value">0px</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="shadow-blur">Text Shadow Blur (px):</label>
+                    <div class="range-container">
+                        <input type="range" id="shadow-blur" min="0" max="20" value="0">
+                        <span id="shadow-blur-value">0px</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="shadow-color">Shadow Color:</label>
+                    <input type="color" id="shadow-color" value="#000000">
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="control-row button-row">
+                <button id="copy-css" class="styled-button">Copy CSS!</button>
+                <button id="reset" class="styled-button">Reset</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

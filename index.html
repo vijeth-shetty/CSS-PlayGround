@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Icons/main.png" type="image/x-icon" />
+    <title>CSS PlayGround</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="logo">
+        <i class="bi bi-braces"></i>
+        <!-- Bootstrap Icon -->
+    </div>
+    <!-- Enhanced Header Section -->
+    <div class="header">
+        <div class="emoji-container">
+            <!-- Emojis surrounding the header -->
+            <div class="emoji" style="animation-delay: 0s">🚀</div>
+            <div class="emoji" style="animation-delay: 1s">🎨</div>
+            <div class="emoji" style="animation-delay: 2s">✨</div>
+            <div class="emoji" style="animation-delay: 3s">🪄</div>
+            <div class="emoji" style="animation-delay: 4s">💡</div>
+            <div class="emoji" style="animation-delay: 5s">🎮</div>
+            <div class="emoji" style="animation-delay: 6s">⭐</div>
+            <div class="emoji" style="animation-delay: 7s">💻</div>
+
+            <!-- Animated stars background -->
+            <div class="stars" style="--duration: 2s; left: 5%; top: 20%"></div>
+            <div class="stars" style="--duration: 3s; left: 15%; top: 70%"></div>
+            <div class="stars" style="--duration: 2.5s; left: 25%; top: 40%"></div>
+            <div class="stars" style="--duration: 4s; left: 75%; top: 30%"></div>
+            <div class="stars" style="--duration: 3.5s; left: 85%; top: 60%"></div>
+        </div>
+        <h1>CSS PlayGround</h1>
+    </div>
+
+    <!-- Rest of your feature cards section... -->
+    <!-- Features Section -->
+    <div class="container py-4">
+        <div class="row g-4">
+            <!-- Box Modeling -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 feature-card shadow">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper text-primary">
+                            <i class="bi bi-box"></i>
+                        </div>
+                        <h3 class="mb-3">Box Modeling</h3>
+                        <p class="text-muted">
+                            The CSS box model describes the rectangular boxes generated for elements. It consists of content, padding, border, and margin. Understanding box sizing is crucial for layout design.
+                        </p>
+                        <a href="./Box Styling Module/Box Styling.html" class="custom-btn">Check Yourself</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Styling -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 feature-card shadow">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper text-success">
+                            <i class="bi bi-fonts"></i>
+                        </div>
+                        <h3 class="mb-3">Text Styling</h3>
+                        <p class="text-muted">
+                            CSS provides numerous text styling properties including font-family, font-size, font-weight, color, text-align, line-height, and text-shadow. Proper text styling enhances readability and design.
+                        </p>
+                        <a href="./Text Styling/index.html" class="custom-btn">Check Yourself</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CSS Filters -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 feature-card shadow">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper text-danger">
+                            <i class="bi bi-filter"></i>
+                        </div>
+                        <h3 class="mb-3">CSS Filters</h3>
+                        <p class="text-muted">
+                            CSS filters allow visual effects like blur, brightness, contrast, grayscale, hue-rotate, and more. They can be applied to images and elements to create various visual effects.
+                        </p><br>
+                        <a href="./Filters/main.html" class="custom-btn">Check Yourself</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animation -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 feature-card shadow">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper text-warning">
+                            <i class="bi bi-asterisk"></i>
+                        </div>
+                        <h3 class="mb-3">CSS Animation</h3>
+                        <p class="text-muted">
+                            CSS animations enable smooth transitions between styles. Use @keyframes to create animation sequences and control playback with properties like duration, timing-function, and iteration-count.
+                        </p>
+                        <a href="./Animation Generator/index.html" class="custom-btn">Check Yourself</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Position emojis in a circular orbit around the header
+        const emojis = document.querySelectorAll('.emoji');
+        const radius = 150; // Distance from the center
+        const angleIncrement = (2 * Math.PI) / emojis.length;
+
+        emojis.forEach((emoji, index) => {
+            const angle = angleIncrement * index;
+            const x = Math.cos(angle) * radius;
+            const y = Math.sin(angle) * radius;
+
+            emoji.style.left = `calc(50% + ${x}px)`;
+            emoji.style.top = `calc(50% + ${y}px)`;
+        });
+    </script>
+</body>
+
+</html>

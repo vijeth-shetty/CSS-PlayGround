@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Icons/animation.png" type="image/x-icon" />
+    <title>Animation Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <nav class="navigation-bar">
+            <div class="nav-content">
+                <a href="../index.html" class="home-link">
+                    <i class="bi bi-house"></i> Home
+                </a>
+                <h1 class="nav-title"><i class="bi bi-braces-asterisk"></i>Animation Generator</h1>
+            </div>
+        </nav>
+        <div class="content-container">
+            <div class="preview-box">
+                <div class="animated-object">
+                    <i class="bi bi-emoji-smile"></i>
+                </div>
+            </div>
+            <div class="code-container">
+                <label class="code-label" for="css-code">Generated Code</label>
+                <textarea class="css-code" id="css-code" readonly>// Generated CSS will appear here...</textarea>
+                <button class="copy-button" id="copy-button">Copy CSS</button>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="control-item">
+                <label>Animation Name:</label>
+                <input type="text" placeholder="Enter animation name">
+            </div>
+            <div class="control-item">
+                <label>Animation Duration (Sec):</label>
+                <input type="text" placeholder="Enter duration">
+            </div>
+            <div class="control-item">
+                <label for="anim-timing">Animation Timing Function:</label>
+                <select id="anim-timing">
+                    <option>linear</option>
+                    <option>ease</option>
+                    <option>ease-in</option>
+                    <option>ease-out</option>
+                    <option>ease-in-out</option>
+                </select>
+            </div>
+            <div class="control-item">
+                <label>Animation Iteration Count:</label>
+                <input type="text" placeholder="Enter the Iteration Count (0 for Infinity)">
+            </div>
+            <div class="control-item">
+                <label for="anim-dir">Animation Direction:</label>
+                <select id="anim-dir">
+                    <option>normal</option>
+                    <option>reverse</option>
+                    <option>alternate</option>
+                    <option>alternate-reverse</option>
+                </select>
+            </div>
+            <div class="control-item">
+                <label for="anim-fillmode">Animation Fill Mode:</label>
+                <select id="anim-fillmode">
+                    <option>none</option>
+                    <option>forwards</option>
+                    <option>backwards</option>
+                    <option>both</option>
+                </select>
+            </div>
+        </div>
+        <div class="keyframes-section">KeyFrames</div>
+        <div class="keyframe-controls">
+            <div class="control-item">
+                <label>Time (%):</label>
+                <input type="text" placeholder="e.g., 50">
+            </div>
+            <div class="control-item">
+                <label for="property">Property:</label>
+                <select id="property">
+                    <option>transform</option>
+                    <option>opacity</option>
+                    <option>background-color</option>
+                    <option>left</option>
+                    <option>top</option>
+                </select>
+            </div>
+            <div class="control-item">
+                <label>Value:</label>
+                <input type="text" placeholder="e.g., rotate(45deg)">
+            </div>
+        </div>
+        <div class="add-keyframe">
+            <button class="copy-button">Add Keyframe</button>
+        </div>
+        <div class="keyframe-list"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

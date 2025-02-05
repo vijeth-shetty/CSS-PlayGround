@@ -1,0 +1,454 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #f5f5f5;
+    /* Optional: adds a light background */
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 15px;
+    /* Added to contain all children */
+}
+
+.controls-table {
+    width: 90%;
+    border-collapse: collapse;
+}
+
+.controls-table tr {
+    height: 40px;
+}
+
+.controls-table td {
+    padding: 8px;
+}
+
+.controls-table td:first-child {
+    width: 40%;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.controls-table td:last-child {
+    width: 60%;
+}
+
+label {
+    font-weight: bolder;
+    color: maroon;
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: maroon;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.controls-table select {
+    width: 100%;
+    padding: 5px;
+}
+
+.controls-table input[type="color"] {
+    width: 50px;
+    height: 30px;
+}
+
+.preview-code-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.result {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.code-container {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 25px;
+}
+
+.code-block {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
+    /* Added padding */
+}
+
+.code-block textarea {
+    width: 180px;
+    /* Slightly reduced width */
+    height: 120px;
+    padding: 8px;
+    resize: none;
+    font-family: monospace;
+    font-size: 14px;
+    background-color: rgba(248, 248, 248, 0.5);
+    border: 1px solid rgba(221, 221, 221, 0.5);
+}
+
+.code-block button {
+    align-self: flex-end;
+    padding: 8px 20px;
+    background-color: #800000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.code-block button:hover {
+    background-color: #600000;
+}
+
+
+/* Adjust existing container styles */
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+/* Responsive adjustments */
+
+@media screen and (max-width: 768px) {
+    .main-container {
+        margin: 10px auto;
+        padding: 10px;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .main,
+    .settings {
+        width: 95%;
+        margin: 10px auto;
+    }
+    .controls-table td:first-child {
+        width: 35%;
+        font-size: 14px;
+    }
+    .controls-table td:last-child {
+        width: 65%;
+    }
+    .preview-code-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .code-container {
+        width: 90%;
+    }
+    .code-block textarea {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .controls-table td:first-child {
+        width: 40%;
+        font-size: 12px;
+    }
+    .controls-table td:last-child {
+        width: 60%;
+    }
+    .controls-table tr {
+        height: 35px;
+    }
+}
+
+.navigation-bar {
+    background-color: #800000;
+    /* Maroon color */
+    width: 100%;
+    padding: 12px 0;
+    margin-bottom: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-variant: small-caps;
+    word-spacing: 1px;
+}
+
+.home-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+}
+
+.home-link:hover {
+    color: #7f6c6c;
+}
+
+.nav-title {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-title i {
+    font-size: 28px;
+}
+
+
+/* Add this in the head section of your HTML for the home icon */
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+/* Adjust existing responsive styles */
+
+@media screen and (max-width: 768px) {
+    .navigation-bar {
+        padding: 10px 0;
+    }
+    .home-link {
+        font-size: 14px;
+    }
+}
+
+.content-container {
+    display: flex;
+    gap: 30px;
+    /* margin-bottom: 30px; */
+}
+
+.visualization-block {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 300px; */
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.code-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.code-block textarea {
+    width: 75%;
+    height: 200px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: none;
+    font-family: monospace;
+    font-size: 14px;
+    background-color: #f8f8f8;
+}
+
+.code-block button {
+    align-self: flex-end;
+    padding: 8px 20px;
+    background-color: #800000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.code-block button:hover {
+    background-color: #600000;
+}
+
+
+/* Responsive adjustments */
+
+@media screen and (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+    .visualization-block,
+    .code-block {
+        width: 100%;
+    }
+    .visualization-block {
+        min-height: 200px;
+    }
+    .code-block textarea {
+        height: 150px;
+    }
+}
+
+.settings {
+    padding: 10px;
+    /* Reduced padding */
+    width: 100%;
+    max-width: 1180px;
+    /* Adjusted to account for padding */
+    margin: 0 auto;
+}
+
+.settings-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    /* Reduced gap */
+    margin-bottom: 15px;
+}
+
+.setting-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* Ensure items take full width of their grid cell */
+}
+
+.setting-item label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    min-width: 120px;
+}
+
+
+/* Color inputs row specific styling */
+
+.settings-row:nth-child(5) .setting-item {
+    align-items: flex-start;
+}
+
+.settings-row:nth-child(5) input[type="color"] {
+    width: 60px;
+    height: 35px;
+}
+
+
+/* Last row alignment with color inputs */
+
+.settings-row:last-child {
+    margin-top: 0;
+}
+
+.settings-row:last-child .setting-item {
+    align-items: flex-start;
+    padding-top: 0;
+}
+
+.settings-row:last-child label {
+    margin-bottom: 8px;
+}
+
+
+/* Controls styling */
+
+.setting-item select {
+    width: 100%;
+    max-width: 100%;
+    /* Ensure inputs don't overflow */
+    height: 35px;
+}
+
+.setting-item input[type="checkbox"] {
+    margin-top: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.setting-item button,
+.setting-item input[type="button"] {
+    width: 100%;
+    height: 35px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #800000;
+    /* Maroon color matching nav bar */
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.setting-item button:hover,
+.setting-item input[type="button"]:hover {
+    background-color: #600000;
+    /* Darker shade for hover */
+}
+
+.setting-item input[type="reset"] {
+    width: 100%;
+    height: 35px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.setting-item input[type="reset"]:hover {
+    background-color: #e8e8e8;
+}
+
+
+/* Responsive adjustments */
+
+@media screen and (max-width: 768px) {
+    .settings-row {
+        gap: 10px;
+    }
+    .setting-item label {
+        font-size: 14px;
+        min-width: 100px;
+    }
+}
+
+.inset-shadow-container {
+    text-align: center;
+}

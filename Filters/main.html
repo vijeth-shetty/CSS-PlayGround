@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Icons/filter.png" type="image/x-icon" />
+    <title>CSS Filters</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <nav class="navigation-bar">
+            <div class="nav-content">
+                <a href="../index.html" class="home-link"> <i class="bi bi-house"></i> Home
+                </a>
+                <h1 class="nav-title"><i class="bi bi-filter"></i> CSS Filters</h1>
+            </div>
+        </nav>
+
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="flex-container">
+                    <div class="image-upload">
+                        <label for="image-selector">Select Image</label>
+                        <input type="file" id="image-selector" accept="image/*" placeholder="Select an image" onchange="loadImage(event)">
+                        <div class="image-container">
+                            <img id="uploaded-image" class="img-fluid" alt="Uploaded Image">
+                            <div id="message"> Please upload an image before downloading.</div>
+                        </div>
+                    </div>
+                    <div class="code-block">
+                        <label for="styles">Generated CSS:</label>
+                        <textarea id="styles" rows="6" readonly></textarea>
+                    </div>
+                </div>
+                <div class="settings">
+                    <div class="settings-row">
+                        <div class="setting-item">
+                            <label for="blur">Blur</label>
+                            <input type="range" id="blur" min="0" max="40" value="0">
+                        </div>
+                        <div class="setting-item">
+                            <label for="brightness">Brightness</label>
+                            <input type="range" id="brightness" min="10" max="200" value="100">
+                        </div>
+                        <div class="setting-item">
+                            <label for="contrast">Contrast</label>
+                            <input type="range" id="contrast" min="0" max="200" value="100">
+                        </div>
+                    </div>
+                    <div class="settings-row">
+                        <div class="setting-item">
+                            <label for="grayscale">Grayscale</label>
+                            <input type="range" id="grayscale" min="0" max="100" value="0">
+                        </div>
+                        <div class="setting-item">
+                            <label for="hue-rotate">Hue-Rotate</label>
+                            <input type="range" id="hue-rotate" min="0" max="180" value="0">
+                        </div>
+                        <div class="setting-item">
+                            <label for="saturate">Saturate</label>
+                            <input type="range" id="saturate" min="0" max="200" value="100">
+                        </div>
+                    </div>
+                    <div class="settings-row">
+                        <div class="setting-item">
+                            <label for="sepia">Sepia</label>
+                            <input type="range" id="sepia" min="0" max="100" value="0">
+                        </div>
+                        <div class="setting-item">
+                            <label for="opacity">Opacity</label>
+                            <input type="range" id="opacity" min="0" max="100" value="100">
+                        </div>
+                        <div class="setting-item">
+                            <label for="invert">Invert</label>
+                            <input type="range" id="invert" min="0" max="100" value="0">
+                        </div>
+                    </div>
+                    <div class="button-row">
+                        <button class="reset" onclick="downloadImage()">Download Image</button>
+                        <button class="reset" onclick="resetFilters()">Reset Filters</button>
+                        <button class="reset" id="copy-styles" onclick="copyStyles()">Copy!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
